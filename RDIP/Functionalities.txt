@@ -1,0 +1,19 @@
+Lan_select:
+	To select languague of the sentence and redirect accordingly.
+Rand_Sentence:  
+        To generate random sentence in a selected languague.
+Jumbled_words:
+        To split the given sentence into words.
+        when clicked on the words they are pushed into another variable which disappear in the current variable.
+        Join the words to give the sentence
+        Reform the sentence button and correct the sentence button are displayed and enabled.
+	
+correct_sentence:
+        To check whether the entered sentence is correct or not.
+	if sentence is correct it returns "CORRECT ANSWER".
+	else it returns "WRONG ANSWER".
+	Get correct sentence button is displayed and enabled.
+        when we click on it it shows correct answers
+        Hide answer button appears
+        when clicked on it answer disappears and button is replaced with get answers.
+	if you want to reset click on reform the sentence
