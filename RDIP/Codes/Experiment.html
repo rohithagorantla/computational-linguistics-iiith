@@ -4,41 +4,45 @@
     <meta http-eqiv="Content-Type" content="text/html; charset = utf-8" />
     <title></title>
     <link rel="stylesheet" href="Experiment.css">
-
+    <script src="Experiment.js"></script>
 </head>
 <body>
 
     <h2>Experiment</h2><br><br>
     <center>
-        <select name="languague" id="lan">
+        <select name="languague" id="lan" onchange="disp()">
             <option>---Select Languague---</option>
-            <option value="English" onClick="e()">English</option>
-            <option value="Hindi" onClick="h()">Hindi</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
         </select>
     </center><br><br><br>
     <center><b><p1 id="dis_sen"></p1></b></center><br>
     <center><b><p2 id="dis_sub"></p2></b></center><br><br>
     <center>
-        <p id="s1"></p>
         <table>
             <tbody>
                 <tr>
-                    <td id="0"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="1"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="2"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="3"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="4"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="5"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="6"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="7"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="8"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="9"></td>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td id="0" onclick="newsen(0)"></td>
+                    <td id="1" onclick="newsen(1)"></td>
+                    <td id="2" onclick="newsen(2)"></td>
+                    <td id="3" onclick="newsen(3)"></td>
+                    <td id="4" onclick="newsen(4)"></td>
+                    <td id="5" onclick="newsen(5)"></td>
+                    <td id="6" onclick="newsen(6)"></td>
+                    <td id="7" onclick="newsen(7)"></td>
+                    <td id="8" onclick="newsen(8)"></td>
+                    <td id="9" onclick="newsen(9)"></td>
                 </tr>
-
             </tbody>
         </table>
     </center><br><br><br>
-    <script src="Experiment.js"></script>
+    <center><b><p1 id="formed_sen"></p1></b><p2 id="braces"></p2></center><br><br><br>
+    <center><p id="s1"></p></center><br /><br />
+    <center><p id="reform"></p></center><br><br><br>
+
+    <p id="s2"></p>
+    <p id="s3"></p>
+    <p id="s4"></p>
 </body>
 
 </html>
