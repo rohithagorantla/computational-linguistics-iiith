@@ -1,15 +1,16 @@
-﻿function disp()
-{
+﻿function disp() {
     document.getElementById("s1").innerHTML = "";
-    document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
-    document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
+
     if (document.getElementById("lan").value == "English")
     {
+        document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
+        document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
+
         var text = '{"con1":[' +
             '{"a":"John ate an apple before afternoon","b":"before afternoon John ate an apple","c":"John before afternoon ate an apple"},' +
             '{"a":"John and Mary went to church","b":"Mary and John went to church"},' +
             '{"a":"John went to church after eating","b":"after eating John went to church","c":"John after eating went to church"},' +
-            '{"a":"did he go to market","b":"he did go to market"},'+
+            '{"a":"did he go to market","b":"he did go to market"},' +
             '{"a":"some students like to study in the night","b":"at night some students like to study"},' +
             '{"a":"the woman who called my sister sells cosmetics","b":"the woman who sells cosmetics called my sister","c":"my sister who sells cosmetics called the woman","d":"my sister who called the woman sells cosmetics"},' +
             '{"a":"John goes to the library and studies","b":"John studies and goes to the library"},' +
@@ -35,12 +36,12 @@
             document.getElementById(k).value = w[b[k]];
             document.getElementById(k).innerHTML = "<button>" + w[b[k]] + "</button>"
         }
+        
         for (var j = w.length; j < 10; j++) {
-            document.getElementById(j).innerHTML =" ";
+            document.getElementById(j).innerHTML = " ";
         }
     }
-    else if (document.getElementById("lan").value == "Hindi")
-    {
+    else if (document.getElementById("lan").value == "Hindi") {
 
         document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
@@ -62,40 +63,44 @@
         var i = 0;
         do {
             var x = Math.floor(Math.random() * w.length)
-            if (b.includes(x) == false)
-            {
+            if (b.includes(x) == false) {
                 b.push(x);
             }
             i++;
         }
         while (w.length != b.length);
-        for (var k = 0; k < w.length; k++)
-        {
-            document.getElementById(k).value = w[b[k]];
-            document.getElementById(k).innerHTML = "<button>" + w[b[k]] + "</button>"
-        }
-        for (var j = w.length; j < 10; j++) {
-            document.getElementById(j).innerHTML =" ";
-        }
-
-
+  
+            for (var k = 0; k < w.length; k++) {
+                document.getElementById(k).value = w[b[k]];
+              
+                document.getElementById(k).innerHTML = "<button>" + w[b[k]] + "</button>"
+            }
+            for (var j = w.length; j < 10; j++) {
+                document.getElementById(j).innerHTML = " ";
+            }
     }
-    
+
 }
-function newsen(k)
-{
-    var g = document.getElementById(k).value
-    g.disabled == true;
-    document.getElementById("s1").innerHTML +=g+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp";
+function newsen(k) {
+    var g = document.getElementById(k).value;
+    document.getElementById("s1").value += g + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp";
+    document.getElementById("s1").innerHTML += g + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp";
     document.getElementById(k).innerHTML = " ";
     document.getElementById("formed_sen").innerHTML = "Formed Sentence"
     document.getElementById("braces").innerHTML = " (after selecting the words): "
     document.getElementById("reform").innerHTML = "<button>" + "Re-form the sentence" + "</button>"
 }
-
-
-
-
-
-
-
+function r() {
+    document.getElementById("formed_sen").innerHTML = " ";
+    document.getElementById("braces").innerHTML = " ";
+    document.getElementById("reform").innerHTML = " ";
+    document.getElementById("s1").innerHTML = " ";
+    for (var i = 0; i < 10; i++)
+    {
+        var a = document.getElementById(i).value
+        if (a != undefined) {
+            document.getElementById(i).innerHTML = "<button>"+a+"</button>";
+        }
+    }
+    
+}
