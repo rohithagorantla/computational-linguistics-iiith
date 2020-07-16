@@ -20,6 +20,7 @@ var hin = '{"con2":[' + '{"a":"राम और श्याम बाजार 
 
 function disp()
 {
+    document.getElementById("get_answer").innerHTML = " ";
     document.getElementById("s1").innerHTML = "";                                                        // to remove formed sentence 
     document.getElementById("s2").value = ""; 
     document.getElementById("corpus1").innerHTML = "";
@@ -108,6 +109,7 @@ function newsen(k) {
 }
 function r() {
     count = 0;
+    document.getElementById("get_answer").innerHTML = "";
     document.getElementById("s1").innerHTML = " ";
     document.getElementById("s2").value = " ";
     document.getElementById("corpus1").innerHTML ="";
@@ -129,17 +131,25 @@ function check_correctness() {
         var d = document.getElementById("s2").value;
         d = d.trim();
         if (d == obj.con1[z].a || d == obj.con1[z].b || d == obj.con1[z].c || d == obj.con1[z].d || d == obj.con1[z].e || d == obj.con1[z].f || d == obj.con1[z].g || d == obj.con1[z].h)
-            document.getElementById("corpus1").value = "Right answer!!!";
-        else
-            document.getElementById("corpus2").value = "Wrong answer!!!";
+            document.getElementById("corpus1").innerHTML = "Right answer!!!";
+        else {
+            document.getElementById("corpus2").innerHTML = "Wrong answer!!!";
+            document.getElementById("get_answer").innerHTML = "<button>" + "Get Correct Sentence" + "</button>";
+        }
     }
     else {
         var z = document.getElementById("ran").value;
         var d = document.getElementById("s2").value;
         d = d.trim();
         if (d == obj.con2[z].a || d == obj.con2[z].b || d == obj.con2[z].c || d == obj.con2[z].d || d == obj.con2[z].e || d == obj.con2[z].f || d == obj.con2[z].g || d == obj.con2[z].h || d == obj.con2[z].i || d == obj.con2[z].j || d == obj.con2[z].k || d == obj.con2[z].l)
-            document.getElementById("corpus1").value = "Right answer!!!";
+
+            document.getElementById("corpus1").innerHTML = "Right answer!!!";
+
         else
-            document.getElementById("corpus2").value = "Wrong answer!!!";
+        {
+            document.getElementById("corpus2").innerHTML = "Wrong answer!!!";
+            document.getElementById("get_answer").innerHTML = "<button>" + "Get Correct Sentence " + "</button>";
+        }
     }
+
 }
