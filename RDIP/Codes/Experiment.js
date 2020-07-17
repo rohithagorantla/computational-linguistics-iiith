@@ -64,11 +64,11 @@ function disp()
             document.getElementById(j).innerHTML = " ";
         }
     }
-    else {
+    else if (document.getElementById("lan").value == "Hindi") {
 
         document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
-        
+
         var x = Math.floor(Math.random() * 7);                                                           // random number to select random sentences from given corpus
         obj = JSON.parse(hin);                                                                          // object declaration
         var r = obj.con2[x].a;                                                                           // to select the sentence from corpus 
@@ -92,6 +92,10 @@ function disp()
         for (var j = w.length; j < 10; j++) {
             document.getElementById(j).innerHTML = " ";
         }
+    }
+    else
+    {
+        alert("Select languague");
     }
 }
 var count = 0;

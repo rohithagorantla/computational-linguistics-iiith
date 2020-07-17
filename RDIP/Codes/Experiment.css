@@ -32,5 +32,9 @@ p3
     color: red;
     font-size: 30px;
 }
+#hide,#answers,p
+{
+     text-align : center;
+}
 
 
