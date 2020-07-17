@@ -32,9 +32,14 @@ p3
     color: red;
     font-size: 30px;
 }
-#hide,#answers,p
+#hide,p
 {
      text-align : center;
+}
+#answers
+{
+    text-align : center;
+    font-size : 15px;
 }
 
 
