@@ -20,15 +20,18 @@ var hin = '{"con2":[' + '{"a":"राम और श्याम बाजार 
 
 function disp()
 {
-    document.getElementById("get_answer").innerHTML = " ";
+    document.getElementById("get_correct").innerHTML = " ";
+    document.getElementById("answers").innerHTML = " ";
     document.getElementById("s1").innerHTML = "";                                                        // to remove formed sentence 
-    document.getElementById("s2").value = ""; 
+    document.getElementById("s1").value = ""; 
     document.getElementById("corpus1").innerHTML = "";
     document.getElementById("corpus2").innerHTML = "";
     document.getElementById("check").innerHTML = "";                                                     // to remove check correctness button
     document.getElementById("reform").innerHTML = "";                                                    // to remove formed sentence
     document.getElementById("formed_sen").innerHTML = "";                                                // to remove reform button
     document.getElementById("braces").innerHTML = "";                                                    //to remove (select the buttons in proper order)
+    document.getElementById("hide").innerHTML = "";
+
     for (var k = 0; k < 10; k++) {
         document.getElementById(k).value = " ";                                                          // to refresh all the buttons when onchanged
     }
@@ -106,10 +109,11 @@ function newsen(k) {
         document.getElementById("check").innerHTML = "<button>" + "Check the correctness of this sentence" + "</button>";
     }
 
-}
+}           
 function r() {
     count = 0;
-    document.getElementById("get_answer").innerHTML = "";
+    document.getElementById("answers").innerHTML = " ";
+    document.getElementById("get_correct").innerHTML = "";
     document.getElementById("s1").innerHTML = " ";
     document.getElementById("s2").value = " ";
     document.getElementById("corpus1").innerHTML ="";
@@ -117,7 +121,8 @@ function r() {
     document.getElementById("formed_sen").innerHTML =" ";
     document.getElementById("braces").innerHTML =" ";
     document.getElementById("reform").innerHTML =" ";
-    document.getElementById("check").innerHTML =" ";
+    document.getElementById("check").innerHTML = " ";
+    document.getElementById("hide").innerHTML = "";
     for (var i = 0; i < 10; i++) {
         var a = document.getElementById(i).value
         if (a != " ") {
@@ -134,7 +139,7 @@ function check_correctness() {
             document.getElementById("corpus1").innerHTML = "Right answer!!!";
         else {
             document.getElementById("corpus2").innerHTML = "Wrong answer!!!";
-            document.getElementById("get_answer").innerHTML = "<button>" + "Get Correct Sentence" + "</button>";
+            document.getElementById("get_correct").innerHTML = "<button>" + "Get Correct Sentence" + "</button>";
         }
     }
     else {
@@ -148,8 +153,56 @@ function check_correctness() {
         else
         {
             document.getElementById("corpus2").innerHTML = "Wrong answer!!!";
-            document.getElementById("get_answer").innerHTML = "<button>" + "Get Correct Sentence " + "</button>";
+            document.getElementById("get_correct").innerHTML = "<button>" + "Get Correct Sentence " + "</button>";
         }
     }
 
+}
+
+
+function get_answer() {
+
+    if (document.getElementById("lan").value == "English") {
+        var n = document.getElementById("ran").value;
+        document.getElementById("get_correct").innerHTML = " ";
+        document.getElementById("hide").innerHTML = "<button>" + "Hide the correct sentence " + "</button>";
+        
+        
+        switch (n) {
+            case 0: document.getElementById("answers").innerHTML = obj.con1[0].a + "<br>" + obj.con1[0].b + "<br>" + obj.con1[0].c; break;
+            case 1: document.getElementById("answers").innerHTML = obj.con1[1].a + "<br>" + obj.con1[1].b; break;
+            case 2: document.getElementById("answers").innerHTML = obj.con1[2].a + "<br>" + obj.con1[0].b + "<br>" + obj.con1[0].c; break;
+            case 3: document.getElementById("answers").innerHTML = obj.con1[3].a + "<br>" + obj.con1[3].b; break;
+            case 4: document.getElementById("answers").innerHTML = obj.con1[4].a + "<br>" + obj.con1[4].b; break;
+            case 5: document.getElementById("answers").innerHTML = obj.con1[5].a + "<br>" + obj.con1[5].b + "<br>" + obj.con1[5].c + "<br>" + obj.con1[5].d; break;
+            case 6: document.getElementById("answers").innerHTML = obj.con1[6].a + "<br>" + obj.con1[6].b; break;
+            case 7: document.getElementById("answers").innerHTML = obj.con1[7].a + "<br>" + obj.con1[7].b; break;
+            case 8: document.getElementById("answers").innerHTML = obj.con1[8].a + "<br>" + obj.con1[8].b + "<br>" + obj.con1[8].c + "<br>" + obj.con1[8].d + "<br>" + obj.con1[8].e + "<br>" + obj.con1[8].f + "<br>" + obj.con1[8].g + "<br>" + obj.con1[8].h; break;
+            case 9: document.getElementById("answers").innerHTML = obj.con1[9].a + "<br>" + obj.con1[9].b + "<br>" + obj.con1[9].c + "<br>" + obj.con1[9].d + "<br>" + obj.con1[9].e + "<br>" + obj.con1[9].f; break;
+
+        }
+    }
+    else {
+        var n = document.getElementById("ran").value;
+        document.getElementById("get_correct").innerHTML = " ";
+        document.getElementById("hide").innerHTML = "<button>" + "Hide the correct sentence " + "</button>";
+
+        switch (n) {
+            case 0: document.getElementById("answers").innerHTML = obj.con2[0].a + "<br>" + obj.con2[0].b + "<br>" + obj.con2[0].c + "<br>" + obj.con2[0].d; break;
+            case 1: document.getElementById("answers").innerHTML = obj.con2[1].a + "<br>" + obj.con2[1].b + "<br>" + obj.con2[1].c + "<br>" + obj.con2[1].d; break;
+            case 2: document.getElementById("answers").innerHTML = obj.con2[2].a + "<br>" + obj.con2[2].b + "<br>" + obj.con2[2].c + "<br>" + obj.con2[2].d + "<br>" + obj.con2[2].e + "<br>" + obj.con2[2].f + "<br>" + obj.con2[2].g + "<br>" + obj.con2[2].h + "<br>" + obj.con2[2].i + "<br>" + obj.con2[2].j + "<br>" + obj.con2[2].k + "<br>" + obj.con2[2].l; break;
+            case 3: document.getElementById("answers").innerHTML = obj.con2[3].a + "<br>" + obj.con2[3].b + "<br>" + obj.con2[3].c + "<br>" + obj.con2[3].d + "<br>" + obj.con2[3].e + "<br>" + obj.con2[3].f; break;
+            case 4: document.getElementById("answers").innerHTML = obj.con2[4].a + "<br>" + obj.con2[4].b + "<br>" + obj.con2[4].c + "<br>" + obj.con2[4].d + "<br>" + obj.con2[4].e + "<br>" + obj.con2[4].f + "<br>" + obj.con2[4].g + "<br>" + obj.con2[4].h; break;
+            case 5: document.getElementById("answers").innerHTML = obj.con2[5].a + "<br>" + obj.con2[5].b + "<br>" + obj.con2[5].c + "<br>" + obj.con1[5].d; break;
+            case 6: document.getElementById("answers").innerHTML = obj.con2[6].a + "<br>" + obj.con2[6].b + "<br>" + obj.con2[6].c + "<br>" + obj.con2[6].d + "<br>" + obj.con2[6].e + "<br>" + obj.con2[6].f + "<br>" + obj.con2[6].g + "<br>" + obj.con2[6].h; break;
+                 
+        }
+    }  
+}
+function hide_answer()
+{
+   
+    document.getElementById("get_correct").innerHTML = "<button>" + "Get Answers " + "</button>";
+    document.getElementById("answers").innerHTML = " ";
+    document.getElementById("hide").innerHTML = " ";
 }
